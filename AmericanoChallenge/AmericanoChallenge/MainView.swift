@@ -9,6 +9,7 @@ import CoreData
 import SwiftUI
 
 struct MainView: View {
+    
     var body: some View {
         TabView {
             ContentView()
@@ -19,6 +20,11 @@ struct MainView: View {
             ChartView()
                 .tabItem {
                     Label("Chart", systemImage: "chart.pie")
+                }
+            
+            AccountsView()
+                .tabItem {
+                    Label("Accounts", systemImage: "dollarsign.circle")
                 }
         }
     }

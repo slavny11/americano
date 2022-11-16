@@ -15,6 +15,7 @@
 		13475835292512EC000D6E1A /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475834292512EC000D6E1A /* DataController.swift */; };
 		13BF8ABB29253EC3001053B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BF8ABA29253EC3001053B2 /* MainView.swift */; };
 		13BF8ABD29253EE6001053B2 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BF8ABC29253EE6001053B2 /* ChartView.swift */; };
+		13BF8ABF2925426E001053B2 /* AccountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BF8ABE2925426E001053B2 /* AccountsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		13475834292512EC000D6E1A /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		13BF8ABA29253EC3001053B2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		13BF8ABC29253EE6001053B2 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		13BF8ABE2925426E001053B2 /* AccountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				13BF8ABA29253EC3001053B2 /* MainView.swift */,
 				1347581F29250839000D6E1A /* ContentView.swift */,
 				13BF8ABC29253EE6001053B2 /* ChartView.swift */,
+				13BF8ABE2925426E001053B2 /* AccountsView.swift */,
 				134758312925116B000D6E1A /* Input.xcdatamodeld */,
 				13475834292512EC000D6E1A /* DataController.swift */,
 				134758212925083A000D6E1A /* Assets.xcassets */,
@@ -153,6 +156,7 @@
 				13475835292512EC000D6E1A /* DataController.swift in Sources */,
 				1347582029250839000D6E1A /* ContentView.swift in Sources */,
 				13BF8ABB29253EC3001053B2 /* MainView.swift in Sources */,
+				13BF8ABF2925426E001053B2 /* AccountsView.swift in Sources */,
 				1347581E29250839000D6E1A /* AmericanoChallengeApp.swift in Sources */,
 				13BF8ABD29253EE6001053B2 /* ChartView.swift in Sources */,
 			);
