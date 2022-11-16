@@ -5,6 +5,7 @@
 //  Created by Viacheslav on 16/11/22.
 //
 
+import CoreData
 import SwiftUI
 
 @main
@@ -14,7 +15,7 @@ struct AmericanoChallengeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
