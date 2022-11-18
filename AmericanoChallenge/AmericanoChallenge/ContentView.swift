@@ -13,18 +13,26 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Input.timestamp, ascending: true)]
+        sortDescriptors: [NSSortDescriptor(keyPath: \Input.timestamp, ascending: false)]
     ) var inputs: FetchedResults<Input>
+    
+    @State private var showFormView = false
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach (inputs) { input in
-                    NavigationLink(destination: Text(input.name ?? "No input")) {
-                        Text(input.name ?? "Unknown")
+            VStack {
+                
+                List {
+                    Section {
+                        ForEach (inputs) { input in
+                            RowView(input: input)
+                        }
+                        .onDelete(perform: deleteInput)
+                    } header: {
+                        Text ("November")
                     }
                 }
-                .onDelete(perform: deleteInput)
+                .listStyle(.insetGrouped)
             }
             .navigationTitle("Cash Flow")
             .toolbar {
@@ -32,9 +40,14 @@ struct ContentView: View {
                     
                     EditButton()
                     
-                    Button(action: addInput, label: {
+                    Button {
+                        showFormView.toggle()
+                    } label: {
                         Image(systemName: "plus")
-                    })
+                    }
+                    .sheet (isPresented: $showFormView) {
+                        AddInputView()
+                    }
                 }
             }
         }
@@ -51,8 +64,10 @@ struct ContentView: View {
         withAnimation {
             let newInput = Input(context: moc)
 
-            newInput.name = "New input"
+            newInput.category = "New input"
             newInput.timestamp = Date.now
+            newInput.currency = "$"
+            newInput.amount = 30
             
             try? moc.save()
         }
@@ -61,6 +76,7 @@ struct ContentView: View {
 
 
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
         ContentView()
     }

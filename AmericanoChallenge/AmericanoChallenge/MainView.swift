@@ -26,6 +26,11 @@ struct MainView: View {
                 .tabItem {
                     Label("Accounts", systemImage: "dollarsign.circle")
                 }
+            
+            CategoriesView()
+                .tabItem {
+                    Label("Categories", systemImage: "square.grid.3x3.topleft.filled")
+                }
         }
     }
 }

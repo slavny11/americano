@@ -10,7 +10,11 @@ import SwiftUI
 
 struct ChartView: View {
     var body: some View {
-        Text("It's gonna be chart here")
+        NavigationView {
+            Text("It's gonna be chart here")
+                .navigationTitle("Charts")
+        }
+        
     }
 }
 
