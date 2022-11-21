@@ -28,7 +28,7 @@ struct AddInputView: View {
     ) var accounts: FetchedResults<Account>
     
     @State private var addAmount: Float = 0.0
-    @State private var addCategory = "Basic"
+    @State private var addCategory: Category?
     @State private var addCurrency = "$"
     @State private var addAccount = "No name"
     
@@ -45,7 +45,6 @@ struct AddInputView: View {
                             Image(systemName: category.imageName ?? "folder")
                             Text(category.name ?? "Unknown")
                         }
-                        .tag(category)
                     }
                 }
                 
@@ -81,7 +80,7 @@ struct AddInputView: View {
         withAnimation {
             let newInput = Input(context: moc)
 
-            newInput.category = addCategory
+//            newInput.category = addCategory
             newInput.timestamp = Date.now
             newInput.currency = addCurrency
             newInput.amount = addAmount

@@ -26,14 +26,22 @@ struct AddAccountView: View {
     
     let accountImages = ["book.circle", "soccerball.circle", "flame.circle", "heart.circle", "bolt.circle", "hammer.circle", "stethoscope.circle", "creditcard.circle", "theatermasks.circle", "popcorn.circle", "house.circle", "car.circle", "tram.circle"]
     
-    let accountCurrencies = ["USD": "$",
-                             "EUR": "€",
-                             "JPY": "¥",
-                             "RUR": "P"]
+    let accountCurrencies = ["$": "USD",
+                             "€": "EUR",
+                             "¥": "JPY",
+                             "P": "RUR"]
     
     var body: some View {
         
             Form {
+                
+                Picker("Currency", selection: $addAccountCurrency){
+                    
+                    ForEach (accountCurrencies.sorted(by: >), id: \.key) { currency, key in
+                            Text("\(key) \(currency)")
+                    }
+                    
+                }
                 
                 TextField("Enter account name", text: $addAccountName)
                 
@@ -59,13 +67,7 @@ struct AddAccountView: View {
                 TextField("Balance", value: $addAccountBalance, format: .number)
                     .keyboardType(.decimalPad)
                 
-//                Picker("Currency", selection: $addAccountCurrency){
-//                    
-//                    ForEach (accountCurrencies, id = \.self) { currency in
-//                        Text(currency)
-//                    }
-//                    
-//                }
+                
                 
                 Button ("Add") {
                     addAccount()
