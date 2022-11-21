@@ -59,21 +59,7 @@ struct ContentView: View {
             }.forEach(moc.delete)
         }
     }
-    
-    private func addInput() {
-        withAnimation {
-            let newInput = Input(context: moc)
-
-            newInput.category = "New input"
-            newInput.timestamp = Date.now
-            newInput.currency = "$"
-            newInput.amount = 30
-            
-            try? moc.save()
-        }
-    }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     

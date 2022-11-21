@@ -16,7 +16,7 @@ struct AddCategoryView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @FetchRequest(
-        sortDescriptors: []
+        sortDescriptors: [SortDescriptor(\.name)]
     ) var categories: FetchedResults<Category>
     
     @State private var addCategoryName = "New category"

@@ -20,6 +20,7 @@
 		13BF8AE529268CBB001053B2 /* AddInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BF8AE429268CBB001053B2 /* AddInputView.swift */; };
 		13BF8AE7292787FF001053B2 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BF8AE6292787FF001053B2 /* CategoriesView.swift */; };
 		13BF8AE929279453001053B2 /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BF8AE829279453001053B2 /* AddCategoryView.swift */; };
+		13BF8AEB292A37E2001053B2 /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BF8AEA292A37E2001053B2 /* AddAccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		13BF8AE429268CBB001053B2 /* AddInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInputView.swift; sourceTree = "<group>"; };
 		13BF8AE6292787FF001053B2 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		13BF8AE829279453001053B2 /* AddCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryView.swift; sourceTree = "<group>"; };
+		13BF8AEA292A37E2001053B2 /* AddAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +74,13 @@
 				1347581D29250839000D6E1A /* AmericanoChallengeApp.swift */,
 				13BF8ABA29253EC3001053B2 /* MainView.swift */,
 				1347581F29250839000D6E1A /* ContentView.swift */,
-				13BF8AE6292787FF001053B2 /* CategoriesView.swift */,
+				13BF8AE02926263A001053B2 /* RowView.swift */,
+				13BF8AE429268CBB001053B2 /* AddInputView.swift */,
 				13BF8ABC29253EE6001053B2 /* ChartView.swift */,
 				13BF8ABE2925426E001053B2 /* AccountsView.swift */,
-				13BF8AE429268CBB001053B2 /* AddInputView.swift */,
+				13BF8AEA292A37E2001053B2 /* AddAccountView.swift */,
+				13BF8AE6292787FF001053B2 /* CategoriesView.swift */,
 				13BF8AE829279453001053B2 /* AddCategoryView.swift */,
-				13BF8AE02926263A001053B2 /* RowView.swift */,
 				134758312925116B000D6E1A /* Input.xcdatamodeld */,
 				13475834292512EC000D6E1A /* DataController.swift */,
 				134758212925083A000D6E1A /* Assets.xcassets */,
@@ -172,6 +175,7 @@
 				13BF8ABB29253EC3001053B2 /* MainView.swift in Sources */,
 				13BF8ABF2925426E001053B2 /* AccountsView.swift in Sources */,
 				13BF8AE7292787FF001053B2 /* CategoriesView.swift in Sources */,
+				13BF8AEB292A37E2001053B2 /* AddAccountView.swift in Sources */,
 				1347581E29250839000D6E1A /* AmericanoChallengeApp.swift in Sources */,
 				13BF8AE929279453001053B2 /* AddCategoryView.swift in Sources */,
 				13BF8ABD29253EE6001053B2 /* ChartView.swift in Sources */,

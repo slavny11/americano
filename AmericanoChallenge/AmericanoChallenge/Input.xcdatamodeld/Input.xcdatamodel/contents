@@ -11,6 +11,7 @@
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Input" representedClassName="Input" syncable="YES" codeGenerationType="class">
+        <attribute name="account" optional="YES" attributeType="String"/>
         <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="currency" optional="YES" attributeType="String"/>

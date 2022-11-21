@@ -9,26 +9,55 @@ import SwiftUI
 
 struct AccountsView: View {
     
+    @Environment(\.managedObjectContext) var moc
+    
+    @FetchRequest(
+        sortDescriptors: [SortDescriptor(\.name)]
+    ) var accounts: FetchedResults<Account>
+    
+    @State private var showAccountFormView = false
+    
     var body: some View {
+        
         NavigationView {
-            Text("Here accounts")
+            List {
+                ForEach (accounts) { account in
+                    HStack {
+                        Image(systemName: account.iconName ?? "folder")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                        Text(account.name ?? "Unknown")
+                        Spacer()
+                        Text(account.currency ?? "$")
+                        Text(String(format: "%.2f", account.amount))
+                            .font(.headline)
+                    }
+                }
+                .onDelete(perform: deleteInput)
+            }
             .navigationTitle("Accounts")
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     
-                    Button(action: {
-                        print("Edit tap")
-                    }, label: {
-                        Text("Edit")
-                    })
+                    EditButton()
                     
                     Button(action: {
-                        print("Edit add")
+                        showAccountFormView.toggle()
                     }, label: {
                         Image(systemName: "plus")
                     })
+                    .sheet (isPresented: $showAccountFormView) {
+                        AddAccountView()
+                    }
                 }
             }
+        }
+    }
+    
+    private func deleteInput(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { accounts[$0]
+            }.forEach(moc.delete)
         }
     }
 }

@@ -20,27 +20,27 @@ struct AddInputView: View {
     ) var inputs: FetchedResults<Input>
     
     @FetchRequest(
-        sortDescriptors: []
+        sortDescriptors: [SortDescriptor(\.name)]
     ) var categories: FetchedResults<Category>
+    
+    @FetchRequest(
+        sortDescriptors: [SortDescriptor(\.name)]
+    ) var accounts: FetchedResults<Account>
     
     @State private var addAmount: Float = 0.0
     @State private var addCategory = "Basic"
     @State private var addCurrency = "$"
-    @State private var addAccount = "Basic"
+    @State private var addAccount = "No name"
     
     var body: some View {
         
 
             
             Form {
-                HStack {
-                    Text(addCurrency)
-                    TextField("Amount", value: $addAmount, format: .number)
-                        .keyboardType(.decimalPad)
-                }
+                
                 Picker("Category", selection: $addCategory){
                     
-                    ForEach (categories) { category in
+                    ForEach (categories) { (category: Category) in
                         HStack {
                             Image(systemName: category.imageName ?? "folder")
                             Text(category.name ?? "Unknown")
@@ -48,11 +48,25 @@ struct AddInputView: View {
                         .tag(category)
                     }
                 }
+                
                 Picker("Account", selection: $addAccount){
-                    Text("Account 1")
-                    Text("Account 2")
-                    Text("Account 3")
+                    ForEach (accounts) { account in
+                        HStack {
+                            Image(systemName: account.iconName ?? "folder")
+                            Text(account.name ?? "Unknown")
+                            Text(String(format: "%.2f", account.amount))
+                            Text(account.currency ?? "Ee")
+                        }
+                        .tag(account)
+                    }
                 }
+                
+                HStack {
+                    Text(addCurrency)
+                    TextField("Amount", value: $addAmount, format: .number)
+                        .keyboardType(.decimalPad)
+                }
+                
                 Button ("Add") {
                     addInput()
                     presentationMode.wrappedValue.dismiss()
@@ -71,6 +85,7 @@ struct AddInputView: View {
             newInput.timestamp = Date.now
             newInput.currency = addCurrency
             newInput.amount = addAmount
+            newInput.account = addAccount
             
             try? moc.save()
         }
