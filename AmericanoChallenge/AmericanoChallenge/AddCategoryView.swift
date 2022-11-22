@@ -46,6 +46,7 @@ struct AddCategoryView: View {
                     }
                 }
                 .frame(height: 50)
+                .accessibilityHidden(true)
             }
 
             Button ("Add") {

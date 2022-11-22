@@ -26,12 +26,14 @@ struct AccountsView: View {
                         Image(systemName: account.iconName ?? "folder")
                             .resizable()
                             .frame(width: 25, height: 25)
+                            .accessibilityHidden(true)
                         Text(account.name ?? "Unknown")
                         Spacer()
                         Text(account.currency ?? "$")
                         Text(String(format: "%.2f", account.amount))
                             .font(.headline)
                     }
+                    .accessibilityElement(children: .combine)
                 }
                 .onDelete(perform: deleteInput)
             }

@@ -27,8 +27,10 @@ struct CategoriesView: View {
                         Image(systemName: category.imageName ?? "folder")
                             .resizable()
                             .frame(width: 25, height: 25)
+                            .accessibilityHidden(true)
                         Text(category.name ?? "Unknown")
                     }
+                    .accessibilityElement(children: .combine)
                 }
                 .onDelete(perform: deleteInput)
             }

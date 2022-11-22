@@ -17,6 +17,7 @@ struct RowView: View {
         
         HStack {
             Image(systemName: input.imageName ?? "fork.knife")
+                .accessibilityHidden(true)
 
                 .padding(.trailing, 2)
             VStack (alignment: .leading) {
@@ -31,6 +32,7 @@ struct RowView: View {
             Text("\(input.currency ?? "Ee")" + "\(amount)")
                 .font(.headline)
         }
+        .accessibilityElement(children: .combine)
     }
 }
 

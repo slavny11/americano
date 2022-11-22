@@ -66,10 +66,11 @@ struct AddInputView: View {
             Form {
                 
                 Picker("Category", selection: $addCategory){
-                    
+                    Text("No Option").tag(Optional<Category>(nil))
                     ForEach (categories) { (category: Category) in
                         HStack {
                             Image(systemName: category.imageName ?? "folder")
+                                .accessibilityHidden(true)
                             Text(category.name ?? "Unknown")
                                 .tag(category)
                         }
@@ -81,6 +82,7 @@ struct AddInputView: View {
 
                         HStack {
                             Image(systemName: account.iconName ?? "folder")
+                                .accessibilityHidden(true)
                             Text("\(account.name ?? "Unknown") (\(String(format: "%.2f", account.amount)) \(account.currency ?? "Ee"))")
                         }.tag(account)
                     }

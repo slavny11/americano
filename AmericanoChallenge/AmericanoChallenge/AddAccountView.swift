@@ -61,6 +61,7 @@ struct AddAccountView: View {
                         }
                     }
                     .frame(height: 50)
+                    .accessibilityHidden(true)
                     
                 }
                 
