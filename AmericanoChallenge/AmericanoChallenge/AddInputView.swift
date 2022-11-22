@@ -71,7 +71,7 @@ struct AddInputView: View {
                         HStack {
                             Image(systemName: category.imageName ?? "folder")
                             Text(category.name ?? "Unknown")
-                                .tag(category.self)
+                                .tag(category)
                         }
                     }
                 }
@@ -82,7 +82,7 @@ struct AddInputView: View {
                         HStack {
                             Image(systemName: account.iconName ?? "folder")
                             Text("\(account.name ?? "Unknown") (\(String(format: "%.2f", account.amount)) \(account.currency ?? "Ee"))")
-                        }.tag(account.self)
+                        }.tag(account)
                     }
                 }
                 
@@ -107,6 +107,7 @@ struct AddInputView: View {
             let newInput = Input(context: moc)
 
             newInput.category = addCategory?.name
+            newInput.imageName = addCategory?.imageName
             newInput.timestamp = Date.now
             newInput.currency = addAccount?.currency ?? "$"
             newInput.amount = addAmount

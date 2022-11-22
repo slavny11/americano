@@ -16,9 +16,8 @@ struct RowView: View {
         let amount = String(format: "%.2f", input.amount)
         
         HStack {
-            Image(systemName: "fork.knife")
-                .resizable()
-                .frame(width: 20, height: 30)
+            Image(systemName: input.imageName ?? "fork.knife")
+
                 .padding(.trailing, 2)
             VStack (alignment: .leading) {
                 Text(input.category ?? "Unknown category")
