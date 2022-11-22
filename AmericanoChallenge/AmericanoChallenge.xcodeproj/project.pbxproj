@@ -88,6 +88,7 @@
 			);
 			path = AmericanoChallenge;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		134758232925083A000D6E1A /* Preview Content */ = {
 			isa = PBXGroup;

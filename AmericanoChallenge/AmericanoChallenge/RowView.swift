@@ -21,13 +21,15 @@ struct RowView: View {
                 .frame(width: 20, height: 30)
                 .padding(.trailing, 2)
             VStack (alignment: .leading) {
-                Text(input.category ?? "Unknown")
+                Text(input.category ?? "Unknown category")
                     .font(.headline)
+                Text(input.account ?? "Unknown account")
+                    .font(.caption2)
                 Text(input.timestamp!, format: .dateTime.hour().minute())
                     .font(.caption2)
             }
             Spacer()
-            Text("$\(amount)")
+            Text("\(input.currency ?? "Ee")" + "\(amount)")
                 .font(.headline)
         }
     }

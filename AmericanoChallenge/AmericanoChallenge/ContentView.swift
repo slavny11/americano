@@ -46,7 +46,7 @@ struct ContentView: View {
                         Image(systemName: "plus")
                     }
                     .sheet (isPresented: $showFormView) {
-                        AddInputView()
+                        AddInputView(moc: moc)
                     }
                 }
             }
