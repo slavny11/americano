@@ -49,7 +49,7 @@ struct ContentView: View {
                     }
                     .accessibilityLabel("Add operation")
                     .sheet (isPresented: $showFormView) {
-                        AddInputView(moc: moc)
+                        AddInputView(moc: _moc)
                     }
                     
                 }

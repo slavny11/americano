@@ -33,7 +33,7 @@ struct RowView: View {
                 .font(.headline)
         }
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("Expense of \(amount) of \(input.currency ?? "$") for \(input.category ?? "Unknown category") from \(input.account ?? "Unknown account") account")
+        .accessibilityLabel("Expense of \(amount) of \(input.currency ?? "$") for \(input.category ?? "Unknown category") from \(input.account ?? "Unknown account") account at \(input.timestamp!, format: .dateTime.hour().minute())")
     }
 }
 
