@@ -34,6 +34,7 @@ struct AccountsView: View {
                             .font(.headline)
                     }
                     .accessibilityElement(children: .combine)
+                    .accessibilityLabel("Account \(account.name ?? "Unknown") with \(String(format: "%.2f", account.amount)) \(account.currency ?? "$")")
                 }
                 .onDelete(perform: deleteInput)
             }
@@ -42,12 +43,14 @@ struct AccountsView: View {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     
                     EditButton()
+                        .accessibilityLabel("Edit accounts")
                     
                     Button(action: {
                         showAccountFormView.toggle()
                     }, label: {
                         Image(systemName: "plus")
                     })
+                    .accessibilityLabel("Add new account")
                     .sheet (isPresented: $showAccountFormView) {
                         AddAccountView()
                     }

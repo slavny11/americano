@@ -29,10 +29,11 @@ struct RowView: View {
                     .font(.caption2)
             }
             Spacer()
-            Text("\(input.currency ?? "Ee")" + "\(amount)")
+            Text("\(input.currency ?? "$")" + "\(amount)")
                 .font(.headline)
         }
         .accessibilityElement(children: .combine)
+        .accessibilityLabel("Expense of \(amount) of \(input.currency ?? "$") for \(input.category ?? "Unknown category") from \(input.account ?? "Unknown account") account")
     }
 }
 

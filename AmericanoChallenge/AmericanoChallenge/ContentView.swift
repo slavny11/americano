@@ -30,6 +30,7 @@ struct ContentView: View {
                         .onDelete(perform: deleteInput)
                     } header: {
                         Text ("November")
+                            .accessibilityLabel("November cash flow")
                     }
                 }
                 .listStyle(.insetGrouped)
@@ -39,15 +40,18 @@ struct ContentView: View {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     
                     EditButton()
+                        .accessibilityLabel("Edit cash flow operations")
                     
                     Button {
                         showFormView.toggle()
                     } label: {
                         Image(systemName: "plus")
                     }
+                    .accessibilityLabel("Add operation")
                     .sheet (isPresented: $showFormView) {
                         AddInputView(moc: moc)
                     }
+                    
                 }
             }
         }

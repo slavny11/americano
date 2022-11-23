@@ -39,12 +39,14 @@ struct CategoriesView: View {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     
                     EditButton()
+                        .accessibilityLabel("Edit categories list")
                     
                     Button(action: {
                         showCategoryFormView.toggle()
                     }, label: {
                         Image(systemName: "plus")
                     })
+                    .accessibilityLabel("Add new category")
                     .sheet (isPresented: $showCategoryFormView) {
                         AddCategoryView()
                     }

@@ -29,6 +29,7 @@ struct AddCategoryView: View {
         Form {
             
             TextField("Enter category name", text: $addCategoryName)
+                .accessibilityLabel("Enter category name")
             
             ScrollView(.horizontal) {
                 HStack {
@@ -53,6 +54,7 @@ struct AddCategoryView: View {
                 addCategory()
                 presentationMode.wrappedValue.dismiss()
             }
+            .accessibilityLabel("Add new category")
             
         }
     }

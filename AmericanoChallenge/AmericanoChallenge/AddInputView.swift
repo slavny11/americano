@@ -76,10 +76,11 @@ struct AddInputView: View {
                         }
                     }
                 }
+                .accessibilityLabel("Choose one from the list")
                 
                 Picker("Account", selection: $addAccount){
                     ForEach (accounts) { (account: Account) in
-
+                        Text("No Option").tag(Optional<Account>(nil))
                         HStack {
                             Image(systemName: account.iconName ?? "folder")
                                 .accessibilityHidden(true)
@@ -87,17 +88,22 @@ struct AddInputView: View {
                         }.tag(account)
                     }
                 }
+                .accessibilityLabel("Choose one from the list")
                 
                 HStack {
                     Text(addAccount?.currency ?? "$")
+                        .accessibilityLabel(addAccount?.currency ?? "$")
                     TextField("Amount", value: $addAmount, format: .number)
                         .keyboardType(.decimalPad)
+                        .accessibilityLabel("Enter amount of money")
                 }
+                
                 
                 Button ("Add") {
                     addInput()
                     presentationMode.wrappedValue.dismiss()
                 }
+                .accessibilityLabel("Add operation")
                 
             }
         

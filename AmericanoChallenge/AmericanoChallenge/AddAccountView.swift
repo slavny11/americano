@@ -42,8 +42,10 @@ struct AddAccountView: View {
                     }
                     
                 }
+                .accessibilityLabel("Choose one from the list")
                 
                 TextField("Enter account name", text: $addAccountName)
+                    .accessibilityLabel("Enter account name")
                 
                 ScrollView(.horizontal) {
                     HStack {
@@ -67,6 +69,7 @@ struct AddAccountView: View {
                 
                 TextField("Balance", value: $addAccountBalance, format: .number)
                     .keyboardType(.decimalPad)
+                    .accessibilityLabel("Enter account balance")
                 
                 
                 
@@ -74,6 +77,7 @@ struct AddAccountView: View {
                     addAccount()
                     presentationMode.wrappedValue.dismiss()
                 }
+                .accessibilityLabel("Add new account")
                 
             }
             
