@@ -7,17 +7,15 @@
 
 import SwiftUI
 
-
-
 struct AccountsView: View {
     
-//    @Environment(\.managedObjectContext) var moc
-//    
-//    @FetchRequest(
-//        sortDescriptors: [SortDescriptor(\.name)]
-//    ) var accounts: FetchedResults<Account>
-//    
-//    @State private var showAccountFormView = false
+    //    @Environment(\.managedObjectContext) var moc
+    //    
+    //    @FetchRequest(
+    //        sortDescriptors: [SortDescriptor(\.name)]
+    //    ) var accounts: FetchedResults<Account>
+    //    
+    //    @State private var showAccountFormView = false
     
     @State var accounts: [AccountsTemp] = accountsTemp
     
@@ -40,35 +38,35 @@ struct AccountsView: View {
                     .accessibilityElement(children: .combine)
                     .accessibilityLabel("Account \(account.accountTempName) with \(String(format: "%.2f", account.accountTempAmount)) \(account.accountTempCurrency)")
                 }
-//                .onDelete(perform: deleteInput)
+                //                .onDelete(perform: deleteInput)
             }
             .navigationTitle("Accounts")
-//            .toolbar {
-//                ToolbarItemGroup(placement: .navigationBarTrailing) {
-//
-//                    EditButton()
-//                        .accessibilityLabel("Edit accounts")
-//
-//                    Button(action: {
-//                        showAccountFormView.toggle()
-//                    }, label: {
-//                        Image(systemName: "plus")
-//                    })
-//                    .accessibilityLabel("Add new account")
-//                    .sheet (isPresented: $showAccountFormView) {
-//                        AddAccountView()
-//                    }
-//                }
-//            }
+            //            .toolbar {
+            //                ToolbarItemGroup(placement: .navigationBarTrailing) {
+            //
+            //                    EditButton()
+            //                        .accessibilityLabel("Edit accounts")
+            //
+            //                    Button(action: {
+            //                        showAccountFormView.toggle()
+            //                    }, label: {
+            //                        Image(systemName: "plus")
+            //                    })
+            //                    .accessibilityLabel("Add new account")
+            //                    .sheet (isPresented: $showAccountFormView) {
+            //                        AddAccountView()
+            //                    }
+            //                }
+            //            }
         }
     }
     
-//    private func deleteInput(offsets: IndexSet) {
-//        withAnimation {
-//            offsets.map { accounts[$0]
-//            }.forEach(moc.delete)
-//        }
-//    }
+    //    private func deleteInput(offsets: IndexSet) {
+    //        withAnimation {
+    //            offsets.map { accounts[$0]
+    //            }.forEach(moc.delete)
+    //        }
+    //    }
 }
 
 struct AccountsView_Previews: PreviewProvider {

@@ -29,8 +29,8 @@ struct ContentView: View {
                         }
                         .onDelete(perform: deleteInput)
                     } header: {
-                        Text ("November")
-                            .accessibilityLabel("November cash flow")
+                        Text ("\(Date.now, format: .dateTime.month(.wide)) total is ")
+                            .accessibilityLabel("\(Date.now, format: .dateTime.month(.wide)) cash flow")
                     }
                 }
                 .listStyle(.insetGrouped)

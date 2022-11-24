@@ -33,60 +33,60 @@ struct AddAccountView: View {
     
     var body: some View {
         
-            Form {
+        Form {
+            
+            Picker("Currency", selection: $addAccountCurrency){
                 
-                Picker("Currency", selection: $addAccountCurrency){
-                    
-                    ForEach (accountCurrencies.sorted(by: >), id: \.key) { currency, key in
-                            Text("\(key) \(currency)")
-                    }
-                    
+                ForEach (accountCurrencies.sorted(by: >), id: \.key) { currency, key in
+                    Text("\(key) \(currency)")
                 }
-                .accessibilityLabel("Choose one from the list")
                 
-                TextField("Enter account name", text: $addAccountName)
-                    .accessibilityLabel("Enter account name")
-                
-                ScrollView(.horizontal) {
-                    HStack {
-                        ForEach (accountImages, id: \.self) { image in
-                            
-                            Button {
-                                addAccountIconName = image
-                                print(image)
-                            } label: {
-                                Image(systemName: image)
-                                    .resizable()
-                                    .frame(width: 25, height:25)
-                                    .padding(.bottom)
-                            }
+            }
+            .accessibilityLabel("Choose one from the list")
+            
+            TextField("Enter account name", text: $addAccountName)
+                .accessibilityLabel("Enter account name")
+            
+            ScrollView(.horizontal) {
+                HStack {
+                    ForEach (accountImages, id: \.self) { image in
+                        
+                        Button {
+                            addAccountIconName = image
+                            print(image)
+                        } label: {
+                            Image(systemName: image)
+                                .resizable()
+                                .frame(width: 25, height:25)
+                                .padding(.bottom)
                         }
                     }
-                    .frame(height: 50)
-                    .accessibilityHidden(true)
-                    
                 }
-                
-                TextField("Balance", value: $addAccountBalance, format: .number)
-                    .keyboardType(.decimalPad)
-                    .accessibilityLabel("Enter account balance")
-                
-                
-                
-                Button ("Add") {
-                    addAccount()
-                    presentationMode.wrappedValue.dismiss()
-                }
-                .accessibilityLabel("Add new account")
+                .frame(height: 50)
+                .accessibilityHidden(true)
                 
             }
             
+            TextField("Balance", value: $addAccountBalance, format: .number)
+                .keyboardType(.decimalPad)
+                .accessibilityLabel("Enter account balance")
+            
+            
+            
+            Button ("Add") {
+                addAccount()
+                presentationMode.wrappedValue.dismiss()
+            }
+            .accessibilityLabel("Add new account")
+            
+        }
+        
     }
     
     private func addAccount() {
         withAnimation {
             let newAccount = Account(context: moc)
-
+            
             newAccount.name = addAccountName
             newAccount.iconName = addAccountIconName
             newAccount.currency = addAccountCurrency

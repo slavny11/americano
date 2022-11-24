@@ -18,7 +18,7 @@ struct RowView: View {
         HStack {
             Image(systemName: input.imageName ?? "fork.knife")
                 .accessibilityHidden(true)
-
+            
                 .padding(.trailing, 2)
             VStack (alignment: .leading) {
                 Text(input.category ?? "Unknown category")

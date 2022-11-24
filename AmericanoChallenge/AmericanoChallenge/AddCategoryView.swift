@@ -49,7 +49,7 @@ struct AddCategoryView: View {
                 .frame(height: 50)
                 .accessibilityHidden(true)
             }
-
+            
             Button ("Add") {
                 addCategory()
                 presentationMode.wrappedValue.dismiss()
@@ -62,7 +62,7 @@ struct AddCategoryView: View {
     private func addCategory() {
         withAnimation {
             let newCategory = Category(context: moc)
-
+            
             newCategory.name = addCategoryName
             newCategory.imageName = addCategoryImageName
             
